@@ -10,12 +10,13 @@
 <body>
     <div class="header" id="header">
         <nav>
-           <a href="https://www.tesla.com/" target="_blank"><img src="../tesla/santam/teslalogo.png" class="logo"></a>
+           <a href="https://www.tesla.com/" target="_blank"><img src="santam/teslalogo.png" class="logo"></a>
             <ul>
                 <li><a href="#" id="models">Model S</a></li>
                 <li><a href="#" id="model3">Model 3</a></li>
                 <li><a href="#" id="modelx">Model X</a></li>
                 <li><a href="#" id="modely">Model Y</a></li>
+                <li><a href="login.html" id="modely">Login</a></li>
             </ul>
             <a href="https://shop.tesla.com/" target="_blank" class="btn">Reserve Now</a>
         </nav>
@@ -48,19 +49,19 @@
         var model = document.getElementById("model");
 
         ms.onclick = function() {
-            header.style.backgroundImage = "url(../tesla/santam/models.gif)";
+            header.style.backgroundImage = "url(./santam/models.gif)";
             model.innerHTML = "Model S";
         }
         m3.onclick = function() {
-            header.style.backgroundImage = "url(../tesla/santam/model3.jpg)";
+            header.style.backgroundImage = "url(santam/model3.jpg)";
             model.innerHTML = "Model 3";
         }
         mx.onclick = function() {
-            header.style.backgroundImage = "url(../tesla/santam/modelx.jpg)";
+            header.style.backgroundImage = "url(santam/modelx.jpg)";
             model.innerHTML = "Model X";
         }
         my.onclick = function() {
-            header.style.backgroundImage = "url(../tesla/santam/model2y.jpg)";
+            header.style.backgroundImage = "url(santam/model2y.jpg)";
             model.innerHTML = "Model Y";
         }
 
