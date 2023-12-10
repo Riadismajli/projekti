@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+     body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            margin-top: -10px;
+            margin-bottom: 16px;
+        }
+ </style>
+    <title>Contact Form</title>
+</head>
+<body>
+    <nav>
+        <a href="https://www.tesla.com/" target="_blank"><img src="santam/teslalogo.png" class="logo"></a>
+         <ul>
+          <li><a href="index.html" id="models">Home</a></li>
+             <li><a href="#" id="models">Model S</a></li>
+             <li><a href="#" id="model3">Model 3</a></li>
+             <li><a href="#" id="modelx">Model X</a></li>
+             <li><a href="#" id="modely">Model Y</a></li>
+             <li><a href="contactform.html">Contact Us</a> </li>
+             <li><a href="login.html" id="modely">Login</a></li>
+         </ul>
+         <a href="https://shop.tesla.com/" target="_blank" class="btn">Reserve Now</a>
+     </nav>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <div class="error" id="error-message"></div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var errorMessage = document.getElementById('error-message');
+
+            errorMessage.innerHTML = '';
+
+            if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+                errorMessage.innerHTML = 'All fields are required.';
+                return false;
+            }
+
+            if (!validateEmail(email)) {
+                errorMessage.innerHTML = 'Invalid email address.';
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateEmail(email) {
+           
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+</body>
+</html>
